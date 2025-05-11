@@ -5,12 +5,12 @@ import pickle
 from tensorflow.keras.models import load_model
 
 # Load model and artifacts
-model = load_model('demand_forecasting_model.h5')
-with open('preprocessing_artifacts.pkl', 'rb') as f:
-    artifacts = pickle.load(f)
+model = load_model('demand_forecasting_model.keras)
+with open('ohe_encoder.pkl', 'rb') as f:
+    ohe_encoder = pickle.load(f)
 
-scaler = artifacts['scaler']
-feature_columns = artifacts['feature_columns']
+with open('scaler.pkl', 'rb') as f:
+    scaler = pickle.load(f)
 
 st.set_page_config(page_title="📦 Demand Forecasting", layout="centered")
 
