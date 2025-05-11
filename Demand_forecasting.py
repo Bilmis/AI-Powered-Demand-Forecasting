@@ -12,6 +12,9 @@ with open('ohe_encoder.pkl', 'rb') as f:
 with open('scaler.pkl', 'rb') as f:
     scaler = pickle.load(f)
 
+with open("feature_columns.pkl", "rb") as f:
+    feature_columns = pickle.load(f)
+
 st.set_page_config(page_title="📦 Demand Forecasting", layout="centered")
 
 st.title("📈 Demand Forecasting App")
