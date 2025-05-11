@@ -61,12 +61,19 @@ with st.form("forecast_form"):
             if col not in input_data.columns:
                 input_data[col] = 0
 
-        input_data = input_data[feature_columns]
-        numeric_cols = input_data.select_dtypes(include=['int64', 'float64']).columns
-        input_data[numeric_cols] = scaler.transform(input_data[numeric_cols])
+        # Ensure input_data has all necessary features in the right order
+input_data = input_data[feature_columns]  # Align columns to match training data
 
-        prediction = model.predict(input_data)[0][0]
-        st.success(f"📦 Estimated Demand: {prediction:.2f} units")
+# Identify numeric columns for scaling
+numeric_cols = input_data.select_dtypes(include=['int64', 'float64']).columns
+
+# Apply scaling to the numeric columns
+input_data[numeric_cols] = scaler.transform(input_data[numeric_cols])
+
+# Now make the prediction
+prediction = model.predict(input_data)[0][0]
+
+st.success(f"📦 Estimated Demand: {prediction:.2f} units")
 
         with st.expander("📊 Details of input data"):
             st.write(input_data)
