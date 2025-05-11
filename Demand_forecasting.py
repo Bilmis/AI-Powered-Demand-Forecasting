@@ -67,3 +67,19 @@ with st.form("forecast_form"):
 
         with st.expander("📊 Details of input data"):
             st.write(input_data)
+
+with st.expander("ℹ️ Feature Descriptions"):
+    st.markdown("""
+    - **Inventory Level**: Current number of product units in stock.
+    - **Units Sold**: Number of units sold on the given day.
+    - **Units Ordered**: Number of units ordered (may be different from sold).
+    - **Price**: Selling price of the product.
+    - **Holiday/Promotion**: Whether the date corresponds to a holiday or promotion (1 = Yes, 0 = No).
+    - **Competitor Pricing**: Price of a similar product sold by a competitor.
+    - **Product ID**: One-hot encoded identifier of the product.
+    - **Category**: One-hot encoded product category (e.g., Electronics, Clothing).
+    - **Region**: One-hot encoded region where the store is located.
+    - **Discount**: One-hot encoded discount level (e.g., 5%, 10%).
+    - **Weather Condition**: One-hot encoded weather on the day (e.g., Sunny, Rainy).
+    - **Seasonality**: One-hot encoded season of the year (Summer, Winter, etc.).
+    """)
