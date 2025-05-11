@@ -5,7 +5,7 @@ import pickle
 from tensorflow.keras.models import load_model
 
 # Load model and artifacts
-model = load_model('demand_forecasting_model.keras)
+model = load_model('demand_forecasting_model.keras')
 with open('ohe_encoder.pkl', 'rb') as f:
     ohe_encoder = pickle.load(f)
 
