@@ -5,5 +5,4 @@ pandas
 numpy
 matplotlib
 joblib
-pickle5
 seaborn
