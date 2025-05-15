@@ -5,7 +5,7 @@ import pickle
 from tensorflow.keras.models import load_model
 
 # Load model and preprocessing tools
-model = load_model("demand_forecasting_model.h5",compile=False)
+model = load_model("demand_forecasting_model.keras")
 with open("scaler.pkl", "rb") as f:
     scaler = pickle.load(f)
 with open("feature_columns.pkl", "rb") as f:
@@ -97,8 +97,11 @@ input_df[numeric_cols] = scaler.transform(input_df[numeric_cols])
 
 # Predict
 if st.button("🚀 Predict Demand"):
-    prediction = model.predict(input_df)
-    st.success(f"📈 **Predicted Demand: {prediction[0][0]:.2f} units**")
+    try:
+        prediction = model.predict(input_df)
+        st.success(f"📈 **Predicted Demand: {prediction[0][0]:.2f} units**")
+    except Exception as e:
+        st.error(f"Prediction failed: {e}")
 
 
 # st.markdown("<br><hr><center style='color: gray;'>Made with ❤️ using Streamlit</center>", unsafe_allow_html=True)
