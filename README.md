@@ -1,6 +1,6 @@
 ﻿# 🧠 Smart Retail Demand Forecasting App
 
-A full-stack machine learning solution to help retailers predict product demand with precision. This project combines data preprocessing, deep learning, and an interactive UI to bring business-ready demand predictions to life
+A full-stack machine learning solution to help retailers predict product demand with precision. This project combines data preprocessing, deep learning, and an interactive UI to bring business-ready demand predictions to life.
 
 ---
 
